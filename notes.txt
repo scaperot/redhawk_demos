@@ -1,0 +1,19 @@
+##
+docker pull geontech/redhawk-development
+
+## Xauthority work around
+xhost +
+
+## docker commands
+docker run -it --volume=/tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY geontech/redhawk-development bash
+
+## 
+git clone https://github.com/scaperot/source_sink_examples
+
+## do a docker commit if you want to return to this container later.
+
+
+# other notes...
+## mods to annotate plots in matplotlib when running streaming data from the REDHAWK sandbox
+#sgplot._figure.legend((sgplot._plot.lines[0],sgplot._plot.lines[1]),('SigGen Float Output','SourceNic BULKIO Float Output'))
+#sgplot._canvas.set_window_title('Sig Gen and SourceNic vs. Time(s)')
